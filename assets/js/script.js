@@ -1,14 +1,14 @@
-var buttonE1 = document.querySelector("#save-task");
-console.log(buttonE1);
-
-var buttonEl = document.querySelector("#save-task");
+var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
-var createTaskHandler = function() {
-    var listItemE1 = document.createElement("li");
-    listItemE1.className = "task-item";
-    listItemE1.textContent = "This is a new task.";
-    tasksToDoEl.appendChild(listItemE1);
-}
+var createTaskHandler = function(event) {
 
-buttonE1.addEventListener("click" , createTaskHandler);
+    event.preventDefault();
+
+    var listItemEl = document.createElement("li");
+    listItemEl.classname = "task-item";
+    listItemEl.textContent = "This is a new task.";
+    tasksToDoEl.appendChild(listItemEl);
+};
+
+formEl.addEventListener("submit", createTaskHandler);
